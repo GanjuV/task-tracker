@@ -1,0 +1,20 @@
+<div fxLayout="column" fxFlexFill>
+  <mat-toolbar class="toolbar">
+    <div fxFlex class="wrapper">
+      <div class="container">
+        <a mat-button routerLink="/task" routerLinkActive="active">
+          <span>Task</span>
+        </a>
+        <a mat-button routerLink="/inbox" routerLinkActive="active">
+          <span>Inbox</span>
+        </a>
+      </div>
+    </div>
+  </mat-toolbar>
+  <div class="router">
+    <router-outlet></router-outlet>
+  </div>
+  <footer fxFlexOffset="auto" class="footer">
+    <div class="mat-small mat-caption container">@ 2021 Company, Inc.</div>
+  </footer>
+</div>

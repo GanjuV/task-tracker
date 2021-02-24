@@ -1,0 +1,43 @@
+<div class="container">
+  <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
+
+  <div *ngIf="!isLoading">
+    <div *ngIf="showError">{{ errorMsg }}</div>
+    <div *ngIf="!showError">
+      <h3 class="mat-h3 subheading-2">Task Details</h3>
+      <div class="spanBorderBottom"></div>
+      <div fxLayout="row wrap" fxLayoutGap="100px grid" class="marginTop">
+        <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%" class="textContainer">
+          <h2 class="mat-h2 mat-title">Details:</h2>
+          <div>
+            <span class="mat-body mat-body-1 bolder">Title: </span>
+            <span>{{ task.title }}</span>
+          </div>
+          <div>
+            <span class="mat-body mat-body-1 bolder">Description: </span>
+            <span *ngIf="task.description != null; else noData">{{ task.description }}</span>
+          </div>
+          <div>
+            <span class="mat-body mat-body-1 bolder">Due Date: </span>
+            <span *ngIf="task.dueDate != null; else noDate">{{ task.dueDate | date }}</span>
+          </div>
+          <div>
+            <span class="mat-body mat-body-1 bolder">Status: </span>
+            <span>{{ task.status }}</span>
+          </div>
+          <div>
+            <span class="mat-body mat-body-1 bolder">Priority: </span>
+            <span>{{ task.priority }}</span>
+          </div>
+          <ng-template #noData class="mat-body-1">
+            <p class="mat-small mat-caption">No Data.</p>
+          </ng-template>
+          <ng-template #noDate class="mat-body-1">
+            <p class="mat-small mat-caption">No Due Date.</p>
+          </ng-template>
+        </div>
+        <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%"></div>
+      </div>
+    </div>
+  </div>
+</div>

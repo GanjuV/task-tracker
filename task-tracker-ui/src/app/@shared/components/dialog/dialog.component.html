@@ -1,0 +1,27 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    <button mat-icon-button mat-dialog-close class="close-icon">X</button>
+    <h2 mat-dialog-title>{{ title }}</h2>
+  </div>
+  <mat-dialog-content class="content-section" [ngClass]="{ 'full-screen': isFullScreen }">
+    <div class="dialog-info-header" *ngIf="secondaryHeader && instructionalText">
+      <h4>{{ secondaryHeader }}</h4>
+      <p>{{ instructionalText }}</p>
+    </div>
+    <ng-container *ngComponentOutlet="data.component"></ng-container>
+  </mat-dialog-content>
+  <div mat-dialog-actions class="dialog-footer" [ngClass]="{ 'full-screen': isFullScreen }" *ngIf="buttons">
+    <button id="modal-secondary-button" mat-button (click)="onNoClick()" *ngIf="buttons && buttons.secondary">
+      <span>{{ buttons.secondary.label }}</span>
+    </button>
+    <button
+      id="modal-primary-button"
+      mat-raised-button
+      color="primary"
+      (click)="submitForm()"
+      *ngIf="buttons && buttons.primary"
+    >
+      <span>{{ buttons.primary.label }}</span>
+    </button>
+  </div>
+</div>

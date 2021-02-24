@@ -1,0 +1,22 @@
+{
+  "name": "REST-API-Server",
+  "version": "1.0.0",
+  "description": "A project to do CRUD operations using firebase",
+  "main": "server.js",
+  "engines": {
+    "node": "14.15.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "start": "node index.js"
+  },
+  "author": "Vaibhav Ganju",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.3",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {}
+}
