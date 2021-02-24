@@ -85,7 +85,7 @@ export class AddTaskComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.taskForm.reset();
+    this.taskForm.reset({status: 'Inprogress'});
     this._submitFormSubscription.unsubscribe();
   }
 }
